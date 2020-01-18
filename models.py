@@ -50,8 +50,9 @@ class Player:
             raise GameOver()
 
     def attack(self, enemy_obj):
-        player_choise = input("Attack! Make a choise [1-3] : ")
+        player_choise = int(input("Attack! Make a choise [1-3] : "))
         enemy_attack = Enemy.select_attack()
+        print(enemy_attack)
         if Player.fight(player_choise, enemy_attack) == 1:
             print("You attacked successfully!")
             enemy_obj.decrease_lives()
@@ -61,7 +62,7 @@ class Player:
             print("It's a draw!")
 
     def defence(self, enemy_obj):
-        player_choise = input("Defence! Make a choise [1-3] : ")
+        player_choise = int(input("Defence! Make a choise [1-3] : "))
         enemy_attack = enemy_obj.select_attack()
         if Player.fight(enemy_attack, player_choise) == 1:
             print("Enemy attacked successfully!")
