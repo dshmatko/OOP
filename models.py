@@ -1,3 +1,6 @@
+"""
+class and methods for Enemy and Player
+"""
 from random import randint
 from exceptions import EnemyDown
 from exceptions import GameOver
@@ -47,7 +50,7 @@ class Player:
     def decrease_lives(self):
         self.lives = self.lives - 1
         if self.lives == 0:
-            raise GameOver()
+            raise GameOver(self)
 
     def attack(self, enemy_obj):
         player_choise = int(input("Attack! Make a choise [1-3] : "))

@@ -35,7 +35,8 @@ def main():
     except GameOver as game_over:
         print("YouLose")
         score_file = open('scores.txt', 'a')
-        score_file.write(game_over.player_name, game_over.player_score + '\n')
+        score_file.write(game_over.player_name + " = " +
+                         game_over.player_score + '\n')
         score_file.close
     except KeyboardInterrupt:
         pass

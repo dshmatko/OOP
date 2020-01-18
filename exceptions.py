@@ -1,3 +1,8 @@
+"""
+exceptions for game
+"""
+
+
 class GameOver(Exception):
     def __init__(self, objects):
         super().__init__()

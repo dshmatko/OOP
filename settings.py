@@ -1,1 +1,4 @@
-LIVES = 3
+"""
+number of lives
+"""
+LIVES = 1
