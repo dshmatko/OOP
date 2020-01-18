@@ -4,7 +4,7 @@ from exceptions import GameOver
 from settings import LIVES
 
 
-class Enemy():
+class Enemy:
     def __init__(self, level):
         self.level = level
         self.lives = level
@@ -19,7 +19,7 @@ class Enemy():
             raise EnemyDown()
 
 
-class Player():
+class Player:
     def __init__(self, player_name):
         self.player_name = player_name
         self.lives = LIVES
@@ -31,17 +31,17 @@ class Player():
         if attack == defense:
             res = 0
         elif attack == 1 and defense == 3:
-            res = 1
+            res = -1
         elif attack == 1 and defense == 2:
-            res = -1
+            res = 1
         elif attack == 2 and defense == 1:
-            res = 1
+            res = -1
         elif attack == 2 and defense == 3:
-            res = -1
-        elif attack == 3 and defense == 2:
             res = 1
-        elif attack == 3 and defense == 1:
+        elif attack == 3 and defense == 2:
             res = -1
+        elif attack == 3 and defense == 1:
+            res = 1
         return res
 
     def decrease_lives(self):
